@@ -1,0 +1,91 @@
+<h5 class="mb-5 text-lg font-bold tracking-tight text-gray-900 dark:text-white ">Employee Details</h5>
+
+
+
+<div style="overflow: auto; height: 500;">
+  <form [formGroup]="employeeForm" class="w-full" (ngSubmit)="onSubmit()" novalidate>
+    <div class="mb-5">
+      <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+      <input type="text" id="first_name" class="form-control" placeholder="Name" formControlName="first_name">
+      @if (employeeForm.get('first_name')?.hasError('required') && employeeForm.get('first_name')?.touched) {
+      <div class="form-error">Name is required</div>
+      }
+    </div>
+    <div class="mb-5">
+      <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
+      <input type="text" id="last_name" class="form-control" placeholder="Last Name" formControlName="last_name">
+      @if (employeeForm.get('last_name')?.hasError('required') && employeeForm.get('last_name')?.touched) {
+      <div class="form-error">Last Name is required</div>
+      }
+    </div>
+    <div class="mb-5">
+      <label for="mobile" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mobile</label>
+      <input type="text" id="mobile" class="form-control" placeholder="Mobile" formControlName="number">
+      @if (employeeForm.get('number')?.hasError('required') && employeeForm.get('number')?.touched) {
+      <div class="form-error">Mobile is required</div>
+      }
+    </div>
+    <div class="mb-5">
+      <label for="dob" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date of Birth</label>
+      <input type="date" id="dob" class="form-control" placeholder="" formControlName="dob" value="09-09-2020">
+      @if (employeeForm.get('dob')?.hasError('required') && employeeForm.get('dob')?.touched) {
+      <div class="form-error">Date of Birth is required</div>
+      }
+    </div>
+    <div class="mb-5">
+      <label for="dob" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dependent</label>
+      <input type="number" id="dependent" class="form-control" placeholder="1" formControlName="dependent" value="2">
+      @if (employeeForm.get('dependent')?.hasError('required') && employeeForm.get('dependent')?.touched) {
+      <div class="form-error">Dependent is required</div>
+      }
+    </div>
+    <div class="mb-5">
+      <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
+      <input type="text" id="address" class="form-control" placeholder="Address" formControlName="address">
+      @if (employeeForm.get('address')?.hasError('required') && employeeForm.get('address')?.touched) {
+      <div class="form-error">Address is required</div>
+      }
+    </div>
+    <div class="mb-5">
+      <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
+      <input type="text" id="city" class="form-control" placeholder="city" formControlName="city">
+      @if (employeeForm.get('city')?.hasError('required') && employeeForm.get('city')?.touched) {
+      <div class="form-error">City is required</div>
+      }
+    </div>
+    <div class="mb-5">
+      <label for="state" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">State</label>
+      <input type="text" id="state" class="form-control" placeholder="state" formControlName="state">
+      @if (employeeForm.get('state')?.hasError('required') && employeeForm.get('state')?.touched) {
+      <div class="form-error">State is required</div>
+      }
+    </div>
+    <div class="mb-5">
+      <label for="country" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Country</label>
+      <input type="text" id="country" class="form-control" placeholder="country" formControlName="country">
+      @if (employeeForm.get('country')?.hasError('required') && employeeForm.get('country')?.touched) {
+      <div class="form-error">Country is required</div>
+      }
+    </div>
+    <div class="mb-5">
+      <label for="doj" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date of Joining</label>
+      <input type="date" id="doj" class="form-control" placeholder="" formControlName="doj">
+      @if (employeeForm.get('doj')?.hasError('required') && employeeForm.get('doj')?.touched) {
+      <div class="form-error">Date of Joining is required</div>
+      }
+    </div>
+      <div class="mb-5">
+        <label for="doj" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+        <input type="text" id="password" class="form-control" placeholder="password" formControlName="password">
+        @if (employeeForm.get('password')?.hasError('required') && employeeForm.get('password')?.touched) {
+        <div class="form-error">Password is required</div>
+        }
+      </div>
+
+  
+    <button type="submit"
+      class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+    <button type="button" (click)="onClose()"
+      class="text-white  ms-2 bg-gray-700 hover:bg-gray-800 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center">Cancel</button>
+  </form>
+</div>
